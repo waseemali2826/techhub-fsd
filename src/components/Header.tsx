@@ -5,7 +5,7 @@ import { OptimizedImage } from '@/components/ui/optimized-image';
 import { Link } from 'react-router-dom';
 import logo from '/logo.webp';
 
-const Header = () => {
+const Header = React.memo(() => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -163,6 +163,8 @@ const Header = () => {
       </div>
     </header>
   );
-};
+});
+
+Header.displayName = "Header";
 
 export default Header;
