@@ -1,6 +1,7 @@
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { OptimizedImage } from '@/components/ui/optimized-image';
+import { InfiniteScroll } from '@/components/ui/infinite-scroll';
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
 
 const switchImages = [
@@ -48,43 +49,44 @@ const Hero = React.memo(() => {
   return (
     <section id="home" className="relative bg-gradient-subtle flex flex-col items-center pt-4 pb-10 scroll-mt-20" aria-label="Hero Section">
       {/* Infinite Scrolling Logos */}
-      <nav aria-label="Partners and Sponsors" className="w-full overflow-hidden mb-6 bg-gradient-to-r from-blue-50/30 via-white/50 to-blue-50/30 py-3 shadow-sm">
-        <div className="flex animate-infinite-scroll hover:animate-infinite-scroll-paused">
-          {/* Multiple sets of logos for seamless infinite scrolling */}
-          {[...Array(4)].map((_, setIndex) => (
-            <div key={setIndex} className="flex items-center gap-12 px-8 flex-shrink-0">
-              <OptimizedImage
-                src="/logo.webp"
-                alt="Tech Hub Logo"
-                className="h-10 sm:h-14 w-auto rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 flex-shrink-0"
-                width={56}
-                height={56}
-              />
-              <OptimizedImage
-                src="/navtec-removebg-preview.webp"
-                alt="Navtec Partner Logo"
-                className="h-10 sm:h-14 w-auto rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 flex-shrink-0"
-                width={56}
-                height={56}
-              />
-              <OptimizedImage
-                src="/pseb-logo.webp"
-                alt="PSEB Partner Logo"
-                className="h-10 sm:h-14 w-auto rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 flex-shrink-0"
-                width={56}
-                height={56}
-              />
-              <OptimizedImage
-                src="/images/HEC Logo.webp"
-                alt="HEC Partner Logo"
-                className="h-10 sm:h-14 w-auto rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 flex-shrink-0"
-                width={56}
-                height={56}
-              />
-            </div>
-          ))}
+      <InfiniteScroll
+        speed="normal"
+        direction="left"
+        pauseOnHover={true}
+        className="mb-6 py-3 shadow-sm"
+        gradient={true}
+      >
+        <div className="flex items-center gap-12 px-8">
+          <OptimizedImage
+            src="/logo.webp"
+            alt="Tech Hub Logo"
+            className="h-10 sm:h-14 w-auto rounded-lg shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 flex-shrink-0"
+            width={56}
+            height={56}
+          />
+          <OptimizedImage
+            src="/navtec-removebg-preview.webp"
+            alt="Navtec Partner Logo"
+            className="h-10 sm:h-14 w-auto rounded-lg shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 flex-shrink-0"
+            width={56}
+            height={56}
+          />
+          <OptimizedImage
+            src="/pseb-logo.webp"
+            alt="PSEB Partner Logo"
+            className="h-10 sm:h-14 w-auto rounded-lg shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 flex-shrink-0"
+            width={56}
+            height={56}
+          />
+          <OptimizedImage
+            src="/images/HEC Logo.webp"
+            alt="HEC Partner Logo"
+            className="h-10 sm:h-14 w-auto rounded-lg shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 flex-shrink-0"
+            width={56}
+            height={56}
+          />
         </div>
-      </nav>
+      </InfiniteScroll>
 
 
       <div className="container mx-auto px-4 md:px-6 lg:px-8">

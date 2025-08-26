@@ -56,6 +56,34 @@
     will-change: transform;
   }
 
+  /* Reverse scroll animations */
+  .animate-infinite-scroll-reverse {
+    animation: infiniteScrollReverse 20s linear infinite;
+    will-change: transform;
+  }
+
+  .animate-infinite-scroll-reverse-paused {
+    animation: infiniteScrollReverse 20s linear infinite;
+    animation-play-state: paused;
+    will-change: transform;
+  }
+
+  .animate-infinite-scroll-reverse-fast {
+    animation: infiniteScrollReverse 12s linear infinite;
+    will-change: transform;
+  }
+
+  .animate-infinite-scroll-reverse-slow {
+    animation: infiniteScrollReverse 30s linear infinite;
+    will-change: transform;
+  }
+
+  /* Floating scroll effect */
+  .animate-float-scroll {
+    animation: floatScroll 25s ease-in-out infinite;
+    will-change: transform;
+  }
+
   /* Text animations */
   .animate-text-pulse {
     animation: textPulse 2s ease-in-out infinite;
@@ -177,6 +205,30 @@
   }
 }
 
+@keyframes infiniteScrollReverse {
+  0% {
+    transform: translateX(-25%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes floatScroll {
+  0%, 100% {
+    transform: translateX(0) translateY(0);
+  }
+  25% {
+    transform: translateX(-5%) translateY(-2px);
+  }
+  50% {
+    transform: translateX(-10%) translateY(0);
+  }
+  75% {
+    transform: translateX(-15%) translateY(2px);
+  }
+}
+
 @keyframes textPulse {
   0%, 100% {
     color: hsl(var(--primary));
@@ -226,6 +278,10 @@
   .animate-infinite-scroll,
   .animate-infinite-scroll-fast,
   .animate-infinite-scroll-slow,
+  .animate-infinite-scroll-reverse,
+  .animate-infinite-scroll-reverse-fast,
+  .animate-infinite-scroll-reverse-slow,
+  .animate-float-scroll,
   .animate-text-pulse,
   .animate-text-alternate,
   .btn-pulse,
