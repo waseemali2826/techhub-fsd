@@ -33,6 +33,29 @@
     will-change: transform;
   }
 
+  /* Enhanced infinite scroll animations */
+  .animate-infinite-scroll {
+    animation: infiniteScroll 20s linear infinite;
+    will-change: transform;
+  }
+
+  .animate-infinite-scroll-paused {
+    animation: infiniteScroll 20s linear infinite;
+    animation-play-state: paused;
+    will-change: transform;
+  }
+
+  /* Smooth infinite scroll variations */
+  .animate-infinite-scroll-fast {
+    animation: infiniteScroll 12s linear infinite;
+    will-change: transform;
+  }
+
+  .animate-infinite-scroll-slow {
+    animation: infiniteScroll 30s linear infinite;
+    will-change: transform;
+  }
+
   /* Text animations */
   .animate-text-pulse {
     animation: textPulse 2s ease-in-out infinite;
@@ -145,6 +168,15 @@
   }
 }
 
+@keyframes infiniteScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-25%);
+  }
+}
+
 @keyframes textPulse {
   0%, 100% {
     color: hsl(var(--primary));
@@ -191,6 +223,9 @@
   .animate-zoom-in-fast,
   .animate-scroll-x,
   .animate-scroll-logos,
+  .animate-infinite-scroll,
+  .animate-infinite-scroll-fast,
+  .animate-infinite-scroll-slow,
   .animate-text-pulse,
   .animate-text-alternate,
   .btn-pulse,
