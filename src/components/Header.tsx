@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import 'animate.css';
+import { OptimizedImage } from '@/components/ui/optimized-image';
 import { Link } from 'react-router-dom';
 import logo from '/logo.webp';
 
@@ -48,62 +48,65 @@ const Header = () => {
       <div className="w-full px-4 md:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between mx-auto">
           
-          <div className="flex items-center animate-fade-in">
+          <div className="flex items-center animate-fade-in-fast">
             <div className="p-2 rounded-lg">
-              <img
+              <OptimizedImage
                 src={logo}
                 alt="Tech Hub Logo"
                 className="w-[116px] h-auto object-contain"
+                width={116}
+                height={40}
+                priority
               />
             </div>
           </div>
-          <nav className="hidden md:flex items-center space-x-6">
-            <Link 
+          <nav className="hidden md:flex items-center space-x-6 stagger-children">
+            <Link
               to="/"
-              className="text-foreground hover:text-primary transition-colors font-medium animate__animated animate__fadeInDown animate__faster"
-              onClick={e => { e.currentTarget.classList.add('animate__zoomIn', 'animate__slow'); handleNavClick(e); setTimeout(() => { e.currentTarget.classList.remove('animate__zoomIn', 'animate__slow'); }, 1200); }}
+              className="text-foreground hover:text-primary transition-colors font-medium hover-scale-fast"
+              onClick={handleNavClick}
             >
               Home
             </Link>
-            <Link 
-              to="/about" 
-              className="text-foreground hover:text-primary transition-colors font-medium animate__animated animate__fadeInDown animate__faster"
-              onClick={e => { e.currentTarget.classList.add('animate__zoomIn', 'animate__slow'); handleNavClick(e); setTimeout(() => { e.currentTarget.classList.remove('animate__zoomIn', 'animate__slow'); }, 1200); }}
+            <Link
+              to="/about"
+              className="text-foreground hover:text-primary transition-colors font-medium hover-scale-fast"
+              onClick={handleNavClick}
             >
               About
             </Link>
-            <Link 
-              to="/services" 
-              className="text-foreground hover:text-primary transition-colors font-medium animate__animated animate__fadeInDown animate__faster"
-              onClick={e => { e.currentTarget.classList.add('animate__zoomIn', 'animate__slow'); handleNavClick(e); setTimeout(() => { e.currentTarget.classList.remove('animate__zoomIn', 'animate__slow'); }, 1200); }}
+            <Link
+              to="/services"
+              className="text-foreground hover:text-primary transition-colors font-medium hover-scale-fast"
+              onClick={handleNavClick}
             >
               Services
             </Link>
-            <Link 
-              to="/courses/free" 
-              className="text-foreground hover:text-primary transition-colors font-medium animate__animated animate__fadeInDown animate__faster"
-              onClick={e => { e.currentTarget.classList.add('animate__zoomIn', 'animate__slow'); handleNavClick(e); setTimeout(() => { e.currentTarget.classList.remove('animate__zoomIn', 'animate__slow'); }, 1200); }}
+            <Link
+              to="/courses/free"
+              className="text-foreground hover:text-primary transition-colors font-medium hover-scale-fast"
+              onClick={handleNavClick}
             >
               Free Courses
             </Link>
-            <Link 
-              to="/courses/paid" 
-              className="text-foreground hover:text-primary transition-colors font-medium animate__animated animate__fadeInDown animate__faster"
-              onClick={e => { e.currentTarget.classList.add('animate__zoomIn', 'animate__slow'); handleNavClick(e); setTimeout(() => { e.currentTarget.classList.remove('animate__zoomIn', 'animate__slow'); }, 1200); }}
+            <Link
+              to="/courses/paid"
+              className="text-foreground hover:text-primary transition-colors font-medium hover-scale-fast"
+              onClick={handleNavClick}
             >
               Paid Courses
             </Link>
-            <Link 
-              to="/gallery" 
-              className="text-foreground hover:text-primary transition-colors font-medium animate__animated animate__fadeInDown animate__faster"
-              onClick={e => { e.currentTarget.classList.add('animate__zoomIn', 'animate__slow'); handleNavClick(e); setTimeout(() => { e.currentTarget.classList.remove('animate__zoomIn', 'animate__slow'); }, 1200); }}
+            <Link
+              to="/gallery"
+              className="text-foreground hover:text-primary transition-colors font-medium hover-scale-fast"
+              onClick={handleNavClick}
             >
               Gallery
             </Link>
-            <Link 
-              to="/contact" 
-              className="text-foreground hover:text-primary transition-colors font-medium animate__animated animate__fadeInDown animate__faster"
-              onClick={e => { e.currentTarget.classList.add('animate__zoomIn', 'animate__slow'); handleNavClick(e); setTimeout(() => { e.currentTarget.classList.remove('animate__zoomIn', 'animate__slow'); }, 1200); }}
+            <Link
+              to="/contact"
+              className="text-foreground hover:text-primary transition-colors font-medium hover-scale-fast"
+              onClick={handleNavClick}
             >
               Contact
             </Link>
@@ -112,16 +115,15 @@ const Header = () => {
           <div className="hidden md:block">
             <Button
               asChild
-              className="bg-gradient-primary hover:shadow-primary transition-all duration-300 animate__animated animate__pulse animate__infinite"
-              onClick={e => { e.currentTarget.classList.add('animate__zoomIn'); setTimeout(() => e.currentTarget.classList.remove('animate__zoomIn'), 100); }}
+              className="bg-gradient-primary hover:shadow-primary transition-all duration-300 btn-pulse hover-lift-fast"
             >
               <Link to="/courses/free" onClick={handleNavClick}>Enroll Now</Link>
             </Button>
           </div>
 
           <button
-            className="md:hidden p-2"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="md:hidden p-2 hover-scale-fast"
+            onClick={toggleMenu}
             aria-label="Toggle menu"
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -129,31 +131,30 @@ const Header = () => {
         </div>
 
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t animate-fade-in">
-            <nav className="flex flex-col space-y-4">
-              <Link to="/" className="block py-2 px-4 text-foreground hover:bg-muted rounded-md animate__animated animate__fadeInLeft animate__faster" onClick={e => { e.currentTarget.classList.add('animate__zoomIn'); handleNavClick(e); setTimeout(() => e.currentTarget.classList.remove('animate__zoomIn'), 700); }}>
+          <div className="md:hidden py-4 border-t animate-fade-in-fast">
+            <nav className="flex flex-col space-y-4 stagger-children">
+              <Link to="/" className="block py-2 px-4 text-foreground hover:bg-muted rounded-md hover-scale-fast" onClick={handleNavClick}>
                 Home
               </Link>
-              <Link to="/about" className="block py-2 px-4 text-foreground hover:bg-muted rounded-md animate__animated animate__fadeInLeft animate__faster" onClick={e => { e.currentTarget.classList.add('animate__zoomIn'); handleNavClick(e); setTimeout(() => e.currentTarget.classList.remove('animate__zoomIn'), 700); }}>
+              <Link to="/about" className="block py-2 px-4 text-foreground hover:bg-muted rounded-md hover-scale-fast" onClick={handleNavClick}>
                 About
               </Link>
-              <Link to="/services" className="block py-2 px-4 text-foreground hover:bg-muted rounded-md animate__animated animate__fadeInLeft animate__faster" onClick={e => { e.currentTarget.classList.add('animate__zoomIn'); handleNavClick(e); setTimeout(() => e.currentTarget.classList.remove('animate__zoomIn'), 700); }}>
+              <Link to="/services" className="block py-2 px-4 text-foreground hover:bg-muted rounded-md hover-scale-fast" onClick={handleNavClick}>
                 Services
               </Link>
-              <Link to="/courses/free" className="block py-2 px-4 text-foreground hover:bg-muted rounded-md animate__animated animate__fadeInLeft animate__faster" onClick={e => { e.currentTarget.classList.add('animate__zoomIn'); handleNavClick(e); setTimeout(() => e.currentTarget.classList.remove('animate__zoomIn'), 700); }}>
+              <Link to="/courses/free" className="block py-2 px-4 text-foreground hover:bg-muted rounded-md hover-scale-fast" onClick={handleNavClick}>
                 Free Courses
               </Link>
-              <Link to="/courses/paid" className="block py-2 px-4 text-foreground hover:bg-muted rounded-md animate__animated animate__fadeInLeft animate__faster" onClick={e => { e.currentTarget.classList.add('animate__zoomIn'); handleNavClick(e); setTimeout(() => e.currentTarget.classList.remove('animate__zoomIn'), 700); }}>
+              <Link to="/courses/paid" className="block py-2 px-4 text-foreground hover:bg-muted rounded-md hover-scale-fast" onClick={handleNavClick}>
                 Paid Courses
               </Link>
-              <Link to="/gallery" className="block py-2 px-4 text-foreground hover:bg-accent/10 rounded-md animate__animated animate__fadeInLeft animate__faster" onClick={e => { e.currentTarget.classList.add('animate__zoomIn'); closeMobileMenu(); setTimeout(() => e.currentTarget.classList.remove('animate__zoomIn'), 700); }}>
+              <Link to="/gallery" className="block py-2 px-4 text-foreground hover:bg-accent/10 rounded-md hover-scale-fast" onClick={closeMobileMenu}>
                 Gallery
               </Link>
-              <Link to="/contact" className="block py-2 px-4 text-foreground hover:bg-accent/10 rounded-md animate__animated animate__fadeInLeft animate__faster" onClick={e => { e.currentTarget.classList.add('animate__zoomIn'); closeMobileMenu(); setTimeout(() => e.currentTarget.classList.remove('animate__zoomIn'), 700); }}>
+              <Link to="/contact" className="block py-2 px-4 text-foreground hover:bg-accent/10 rounded-md hover-scale-fast" onClick={closeMobileMenu}>
                 Contact
               </Link>
-              <Button asChild className="bg-gradient-primary w-full animate__animated animate__pulse animate__infinite"
-                onClick={e => { e.currentTarget.classList.add('animate__zoomIn'); setTimeout(() => e.currentTarget.classList.remove('animate__zoomIn'), 1200); }}>
+              <Button asChild className="bg-gradient-primary w-full btn-pulse hover-lift-fast">
                 <Link to="/courses/free" onClick={handleNavClick}>Enroll Now</Link>
               </Button>
             </nav>

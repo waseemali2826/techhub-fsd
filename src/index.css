@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Import optimized animations */
+@import './styles/animations.css';
+
 /* Professional Government-Style Design System for Tech Hub Faisalabad */
 
 @layer base {
