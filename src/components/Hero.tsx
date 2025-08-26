@@ -48,23 +48,21 @@ const Hero = React.memo(() => {
   return (
     <section id="home" className="relative bg-gradient-subtle flex flex-col items-center pt-4 pb-10 scroll-mt-20" aria-label="Hero Section">
       {/* Scrolling Images Carousel */}
-      <nav aria-label="Partners and Sponsors" className="w-full flex justify-start overflow-hidden mb-6">
-        <div className="relative w-full h-12 sm:h-20">
-          <div
-            className="flex gap-8 animate-scroll-x items-center gpu-accelerated"
-            tabIndex={0}
-            aria-label="Scrolling partner logos"
-          >
-            {/* Logos scrolling */}
-            <OptimizedImage src="/logo.webp" alt="Tech Hub Logo" className="h-12 sm:h-16 w-auto rounded-xl shadow-lg" width={64} height={64} />
-            <OptimizedImage src="/navtec-removebg-preview.webp" alt="Navtec Partner Logo" className="h-12 sm:h-16 w-auto rounded-xl shadow-lg" width={64} height={64} />
-            <OptimizedImage src="/pseb-logo.webp" alt="PSEB Partner Logo" className="h-12 sm:h-16 w-auto rounded-xl shadow-lg" width={64} height={64} />
-            <OptimizedImage src="/images/HEC Logo.webp" alt="HEC Partner Logo" className="h-12 sm:h-16 w-auto rounded-xl shadow-lg" width={64} height={64} />
-            {/* Repeat for loop effect */}
-            <OptimizedImage src="/logo.webp" alt="Tech Hub Logo" className="h-12 sm:h-16 w-auto rounded-xl shadow-lg" width={64} height={64} />
-            <OptimizedImage src="/navtec-removebg-preview.webp" alt="Navtec Partner Logo" className="h-12 sm:h-16 w-auto rounded-xl shadow-lg" width={64} height={64} />
-            <OptimizedImage src="/pseb-logo.webp" alt="PSEB Partner Logo" className="h-12 sm:h-16 w-auto rounded-xl shadow-lg" width={64} height={64} />
-            <OptimizedImage src="/images/HEC Logo.webp" alt="HEC Partner Logo" className="h-12 sm:h-16 w-auto rounded-xl shadow-lg" width={64} height={64} />
+      <nav aria-label="Partners and Sponsors" className="w-full overflow-hidden mb-6 bg-white/50 py-2">
+        <div className="flex animate-scroll-logos">
+          {/* First set of logos */}
+          <div className="flex items-center justify-around min-w-full gap-8 px-4">
+            <OptimizedImage src="/logo.webp" alt="Tech Hub Logo" className="h-12 sm:h-16 w-auto rounded-xl shadow-lg flex-shrink-0" width={64} height={64} />
+            <OptimizedImage src="/navtec-removebg-preview.webp" alt="Navtec Partner Logo" className="h-12 sm:h-16 w-auto rounded-xl shadow-lg flex-shrink-0" width={64} height={64} />
+            <OptimizedImage src="/pseb-logo.webp" alt="PSEB Partner Logo" className="h-12 sm:h-16 w-auto rounded-xl shadow-lg flex-shrink-0" width={64} height={64} />
+            <OptimizedImage src="/images/HEC Logo.webp" alt="HEC Partner Logo" className="h-12 sm:h-16 w-auto rounded-xl shadow-lg flex-shrink-0" width={64} height={64} />
+          </div>
+          {/* Second set of logos for seamless loop */}
+          <div className="flex items-center justify-around min-w-full gap-8 px-4">
+            <OptimizedImage src="/logo.webp" alt="Tech Hub Logo" className="h-12 sm:h-16 w-auto rounded-xl shadow-lg flex-shrink-0" width={64} height={64} />
+            <OptimizedImage src="/navtec-removebg-preview.webp" alt="Navtec Partner Logo" className="h-12 sm:h-16 w-auto rounded-xl shadow-lg flex-shrink-0" width={64} height={64} />
+            <OptimizedImage src="/pseb-logo.webp" alt="PSEB Partner Logo" className="h-12 sm:h-16 w-auto rounded-xl shadow-lg flex-shrink-0" width={64} height={64} />
+            <OptimizedImage src="/images/HEC Logo.webp" alt="HEC Partner Logo" className="h-12 sm:h-16 w-auto rounded-xl shadow-lg flex-shrink-0" width={64} height={64} />
           </div>
         </div>
       </nav>

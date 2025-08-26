@@ -28,6 +28,11 @@
     will-change: transform;
   }
 
+  .animate-scroll-logos {
+    animation: scrollLogos 15s linear infinite;
+    will-change: transform;
+  }
+
   /* Text animations */
   .animate-text-pulse {
     animation: textPulse 2s ease-in-out infinite;
@@ -131,6 +136,15 @@
   }
 }
 
+@keyframes scrollLogos {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
 @keyframes textPulse {
   0%, 100% {
     color: hsl(var(--primary));
@@ -176,6 +190,7 @@
   .animate-scale-in-fast,
   .animate-zoom-in-fast,
   .animate-scroll-x,
+  .animate-scroll-logos,
   .animate-text-pulse,
   .animate-text-alternate,
   .btn-pulse,
