@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Hub Faisalabad - IT Learning Institute</title>
+    <meta name="description" content="Faisalabad's largest IT learning institute offering expert-led courses in web development, mobile app development, and more.">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="/logo.webp" as="image">
+    <link rel="preload" href="/images/front.webp" as="image">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="/logo.webp" type="image/webp">
+</head>
+<body>
+    <!-- Header -->
+    <header id="main-header" class="header">
+        <div class="header-container">
+            <div class="header-content">
+                <!-- Logo -->
+                <div class="logo-container animate-fade-in-fast">
+                    <div class="logo-wrapper">
+                        <img src="/logo.webp" alt="Tech Hub Logo" class="logo" width="116" height="40">
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="desktop-nav stagger-children">
+                    <a href="/" class="nav-link hover-scale-fast">Home</a>
+                    <a href="about.php" class="nav-link hover-scale-fast">About</a>
+                    <a href="services.php" class="nav-link hover-scale-fast">Services</a>
+                    <a href="courses.php?type=free" class="nav-link hover-scale-fast">Free Courses</a>
+                    <a href="courses.php?type=paid" class="nav-link hover-scale-fast">Paid Courses</a>
+                    <a href="gallery.php" class="nav-link hover-scale-fast">Gallery</a>
+                    <a href="contact.php" class="nav-link hover-scale-fast">Contact</a>
+                </nav>
+
+                <!-- CTA Button -->
+                <div class="cta-container">
+                    <a href="courses.php?type=free" class="btn btn-primary btn-pulse hover-lift-fast">
+                        Enroll Now
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Toggle -->
+                <button class="mobile-toggle hover-scale-fast" id="mobile-toggle" aria-label="Toggle menu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div class="mobile-menu" id="mobile-menu">
+                <nav class="mobile-nav stagger-children">
+                    <a href="/" class="mobile-nav-link hover-scale-fast">Home</a>
+                    <a href="about.php" class="mobile-nav-link hover-scale-fast">About</a>
+                    <a href="services.php" class="mobile-nav-link hover-scale-fast">Services</a>
+                    <a href="courses.php?type=free" class="mobile-nav-link hover-scale-fast">Free Courses</a>
+                    <a href="courses.php?type=paid" class="mobile-nav-link hover-scale-fast">Paid Courses</a>
+                    <a href="gallery.php" class="mobile-nav-link hover-scale-fast">Gallery</a>
+                    <a href="contact.php" class="mobile-nav-link hover-scale-fast">Contact</a>
+                    <a href="courses.php?type=free" class="btn btn-primary btn-pulse hover-lift-fast mobile-cta">
+                        Enroll Now
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero-section">
+            <!-- Infinite Scrolling Logos -->
+            <div class="infinite-scroll-container mb-6 py-3 shadow-sm gradient-bg">
+                <div class="infinite-scroll animate-infinite-scroll">
+                    <!-- Multiple logo sets for seamless scrolling -->
+                    <div class="logo-set">
+                        <img src="/logo.webp" alt="Tech Hub Logo" class="partner-logo">
+                        <img src="/navtec-removebg-preview.webp" alt="Navtec Partner Logo" class="partner-logo">
+                        <img src="/pseb-logo.webp" alt="PSEB Partner Logo" class="partner-logo">
+                        <img src="/images/HEC Logo.webp" alt="HEC Partner Logo" class="partner-logo">
+                    </div>
+                    <div class="logo-set">
+                        <img src="/logo.webp" alt="Tech Hub Logo" class="partner-logo">
+                        <img src="/navtec-removebg-preview.webp" alt="Navtec Partner Logo" class="partner-logo">
+                        <img src="/pseb-logo.webp" alt="PSEB Partner Logo" class="partner-logo">
+                        <img src="/images/HEC Logo.webp" alt="HEC Partner Logo" class="partner-logo">
+                    </div>
+                    <div class="logo-set">
+                        <img src="/logo.webp" alt="Tech Hub Logo" class="partner-logo">
+                        <img src="/navtec-removebg-preview.webp" alt="Navtec Partner Logo" class="partner-logo">
+                        <img src="/pseb-logo.webp" alt="PSEB Partner Logo" class="partner-logo">
+                        <img src="/images/HEC Logo.webp" alt="HEC Partner Logo" class="partner-logo">
+                    </div>
+                    <div class="logo-set">
+                        <img src="/logo.webp" alt="Tech Hub Logo" class="partner-logo">
+                        <img src="/navtec-removebg-preview.webp" alt="Navtec Partner Logo" class="partner-logo">
+                        <img src="/pseb-logo.webp" alt="PSEB Partner Logo" class="partner-logo">
+                        <img src="/images/HEC Logo.webp" alt="HEC Partner Logo" class="partner-logo">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Secondary Feature Carousel -->
+            <div class="infinite-scroll-container mb-8 py-2">
+                <div class="infinite-scroll animate-infinite-scroll-reverse-slow">
+                    <div class="feature-set">
+                        <div class="feature-badge">
+                            <div class="feature-dot bg-primary"></div>
+                            <span>Expert Instructors</span>
+                        </div>
+                        <div class="feature-badge">
+                            <div class="feature-dot bg-green"></div>
+                            <span>Industry Certified</span>
+                        </div>
+                        <div class="feature-badge">
+                            <div class="feature-dot bg-blue"></div>
+                            <span>100% Placement</span>
+                        </div>
+                        <div class="feature-badge">
+                            <div class="feature-dot bg-purple"></div>
+                            <span>Modern Curriculum</span>
+                        </div>
+                    </div>
+                    <!-- Repeat sets for seamless scrolling -->
+                    <div class="feature-set">
+                        <div class="feature-badge">
+                            <div class="feature-dot bg-primary"></div>
+                            <span>Expert Instructors</span>
+                        </div>
+                        <div class="feature-badge">
+                            <div class="feature-dot bg-green"></div>
+                            <span>Industry Certified</span>
+                        </div>
+                        <div class="feature-badge">
+                            <div class="feature-dot bg-blue"></div>
+                            <span>100% Placement</span>
+                        </div>
+                        <div class="feature-badge">
+                            <div class="feature-dot bg-purple"></div>
+                            <span>Modern Curriculum</span>
+                        </div>
+                    </div>
+                    <div class="feature-set">
+                        <div class="feature-badge">
+                            <div class="feature-dot bg-primary"></div>
+                            <span>Expert Instructors</span>
+                        </div>
+                        <div class="feature-badge">
+                            <div class="feature-dot bg-green"></div>
+                            <span>Industry Certified</span>
+                        </div>
+                        <div class="feature-badge">
+                            <div class="feature-dot bg-blue"></div>
+                            <span>100% Placement</span>
+                        </div>
+                        <div class="feature-badge">
+                            <div class="feature-dot bg-purple"></div>
+                            <span>Modern Curriculum</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hero Content -->
+            <div class="container">
+                <div class="hero-grid">
+                    <!-- Left Side Text -->
+                    <div class="hero-text animate-fade-in-fast">
+                        <h1 class="hero-title">
+                            <span class="animate-text-alternate">Faisalabad's</span>
+                            <span class="animate-text-pulse">Largest IT Learning Institute</span>
+                        </h1>
+                        <p class="hero-description">
+                            <strong>TECH HUB</strong> empowers young minds with cutting-edge IT skills through expert-led courses. 
+                            We aim to drive innovation and contribute to economic growth. Join us to shape the future of technology.
+                        </p>
+                        <div class="hero-buttons stagger-children">
+                            <a href="courses.php?type=free" class="btn btn-primary btn-large hover-lift-fast btn-pulse">
+                                Enroll in Free Courses
+                                <svg class="btn-icon" width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                    <path d="M5 12h14m-7-7l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </a>
+                            <a href="courses.php?type=paid" class="btn btn-outline btn-large hover-scale-fast">
+                                View Paid Courses
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Right Side Image Carousel -->
+                    <div class="hero-carousel animate-scale-in-fast">
+                        <div class="image-switcher">
+                            <img id="hero-image" src="/images/front.webp" alt="Tech Hub Course Preview" class="carousel-image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dynamic Content Area -->
+        <div id="dynamic-content">
+            <!-- This will be populated by PHP includes or AJAX -->
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer id="main-footer">
+        <!-- Footer content will be loaded here -->
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="assets/js/utils.js"></script>
+    <script src="assets/js/animations.js"></script>
+    <script src="assets/js/components.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
