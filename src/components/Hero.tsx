@@ -88,6 +88,33 @@ const Hero = React.memo(() => {
         </div>
       </InfiniteScroll>
 
+      {/* Secondary Infinite Scroll - Reverse Direction */}
+      <InfiniteScroll
+        speed="slow"
+        direction="right"
+        pauseOnHover={true}
+        className="mb-8 py-2"
+        gradient={false}
+      >
+        <div className="flex items-center gap-16 px-6">
+          <div className="flex items-center gap-3 bg-white/80 rounded-full px-4 py-2 shadow-sm">
+            <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
+            <span className="text-sm font-medium text-gray-700">Expert Instructors</span>
+          </div>
+          <div className="flex items-center gap-3 bg-white/80 rounded-full px-4 py-2 shadow-sm">
+            <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+            <span className="text-sm font-medium text-gray-700">Industry Certified</span>
+          </div>
+          <div className="flex items-center gap-3 bg-white/80 rounded-full px-4 py-2 shadow-sm">
+            <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
+            <span className="text-sm font-medium text-gray-700">100% Placement</span>
+          </div>
+          <div className="flex items-center gap-3 bg-white/80 rounded-full px-4 py-2 shadow-sm">
+            <div className="w-2 h-2 bg-purple-500 rounded-full animate-pulse"></div>
+            <span className="text-sm font-medium text-gray-700">Modern Curriculum</span>
+          </div>
+        </div>
+      </InfiniteScroll>
 
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
