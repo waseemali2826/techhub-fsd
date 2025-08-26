@@ -1,0 +1,33 @@
+{
+  "scripts": {
+    "dev": "vite",
+    "dev:performance": "vite --config vite.config.performance.ts",
+    "build": "vite build",
+    "build:performance": "vite build --config vite.config.performance.ts",
+    "build:analyze": "vite build --config vite.config.performance.ts && npx vite-bundle-analyzer dist",
+    "preview": "vite preview",
+    "lint": "eslint .",
+    "test:lighthouse": "npx lighthouse http://localhost:4173 --only-categories=performance --chrome-flags='--headless'",
+    "optimize:images": "npx imagemin src/assets/**/*.{jpg,png,jpeg} --out-dir=src/assets/optimized --plugin=imagemin-mozjpeg --plugin=imagemin-pngquant"
+  },
+  "performance": {
+    "budgets": [
+      {
+        "type": "initial",
+        "maximumWarning": "500kb",
+        "maximumError": "1mb"
+      },
+      {
+        "type": "anyComponentStyle",
+        "maximumWarning": "50kb",
+        "maximumError": "100kb"
+      }
+    ]
+  },
+  "devDependencies": {
+    "vite-bundle-analyzer": "^0.7.0",
+    "imagemin": "^8.0.1",
+    "imagemin-mozjpeg": "^10.0.0",
+    "imagemin-pngquant": "^9.0.2"
+  }
+}
