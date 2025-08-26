@@ -37,6 +37,10 @@ const Header = React.memo(() => {
     }, 0);
   };
 
+  const toggleMenu = useCallback(() => {
+    setIsMenuOpen(prev => !prev);
+  }, []);
+
   return (
     <header
       className={`sticky top-0 z-50 w-full border-b transition-all duration-300 ${
