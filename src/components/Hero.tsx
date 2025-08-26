@@ -37,13 +37,13 @@ const ImageSwitcher = React.memo(() => {
   );
 });
 
-const Hero = () => {
-  const scrollToSection = (sectionId: string) => {
+const Hero = React.memo(() => {
+  const scrollToSection = useCallback((sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
-  };
+  }, []);
 
   return (
     <section id="home" className="relative bg-gradient-subtle flex flex-col items-center pt-4 pb-10 scroll-mt-20" aria-label="Hero Section">
@@ -113,6 +113,8 @@ const Hero = () => {
       </div>
     </section>
   );
-};
+});
+
+Hero.displayName = "Hero";
 
 export default Hero;
