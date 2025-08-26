@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
 /**
  * Hook for optimized scroll handling with throttling
@@ -51,7 +51,7 @@ export const useIntersectionObserver = (
 /**
  * Hook for debouncing values
  */
-export const useDebounce = <T>(value: T, delay: number): T => {
+export const useDebounce = <T,>(value: T, delay: number): T => {
   const [debouncedValue, setDebouncedValue] = useState<T>(value);
 
   useEffect(() => {
@@ -84,5 +84,3 @@ export const useOptimizedResize = (callback: () => void) => {
     };
   }, []);
 };
-
-import { useState } from 'react';
